@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "bcad917f-70dc-4b19-89a8-1f11397798f9",
+		"name": "Teslo-nest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5404306"
+	},
+	"item": [
+		{
+			"name": "Create product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1YzUyYTdiLTA2NGItNDY3ZC04ZjU5LTAwZmMxOGUzMDEyMiIsImlhdCI6MTc0ODU2NTkwMCwiZXhwIjoxNzQ4NTczMTAwfQ.EOyWxI3yoP_KnE-u6zPmESRPhoblFSg8RrsuB0Q-AL4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"T sssdsadsadssssss\",\n    \"sizes\": [\"SM\", \"M\"],\n    \"gender\": \"men\",\n    \"price\": 151.99,\n    \"images\": [\n        \"http://image1.jgp\",\n        \"http://image2.jgp\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjhlYzU5OTA5LWFiMDgtNGZlYS1hMDYwLTIxZTJhMGQ1MThlYSIsImlhdCI6MTc0ODkwMDU2MywiZXhwIjoxNzQ4OTA3NzYzfQ.RX_aIx4jxvLWIoHaypH74CsonPs8VcOEWnyCRtMwEqo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products/2cadbf6f-a050-4338-815e-9870b487305c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"2cadbf6f-a050-4338-815e-9870b487305c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products/55a49b0d-d05e-49cd-90b8-b93d7f40eb58",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"55a49b0d-d05e-49cd-90b8-b93d7f40eb58"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1YzUyYTdiLTA2NGItNDY3ZC04ZjU5LTAwZmMxOGUzMDEyMiIsImlhdCI6MTc0ODU1MDI2OCwiZXhwIjoxNzQ4NTU3NDY4fQ.57KFKqPVWMsNlhJwTLK_7WecqdqlM18RK1QQdFuholM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"T 222222\",\n    \"price\": 200,\n    \"images\": [\n        \"https://image1.jpg\"\n\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/2cadbf6f-a050-4338-815e-9870b487305c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"2cadbf6f-a050-4338-815e-9870b487305c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seed",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1YzUyYTdiLTA2NGItNDY3ZC04ZjU5LTAwZmMxOGUzMDEyMiIsImlhdCI6MTc0ODU1MDI2OCwiZXhwIjoxNzQ4NTU3NDY4fQ.57KFKqPVWMsNlhJwTLK_7WecqdqlM18RK1QQdFuholM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/seed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload product image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/jokerwow/Imágenes/Capturas de pantalla/Captura desde 2023-07-10 21-13-52.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/files/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"files",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get image by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/files/product/1549268-00-A_0_2000.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"files",
+						"product",
+						"1549268-00-A_0_2000.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"Tuan322@juan.com\",\n    \"password\": \"Abc123\",\n    \"fullName\": \"juan\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user1@user1.com\",\n    \"password\": \"Abc123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test private routes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIxYWIyZGFmLWZmNzQtNGEzOC1hNzdjLTc0MWQ0MzJjNTZkMyIsImlhdCI6MTc0ODMwNjY1NSwiZXhwIjoxNzQ4MzEzODU1fQ.pPoJO6EV5Oy2Tb4B7hD1P143GzlMwK6x7xuZQk2ohzw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/auth/private",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"private"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check auth status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYyYWZkZjJiLTFjZDUtNGVlZi1hYmE4LTlmYTQ3YjkxYzE5ZSIsImlhdCI6MTc0ODU2ODY1NiwiZXhwIjoxNzQ4NTc1ODU2fQ.utxdhSP0l9TMUV-AJuNvPU56v2xMqrPurx9l4e7Lmdc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/auth/check-status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"check-status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
