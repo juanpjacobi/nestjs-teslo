@@ -8,6 +8,7 @@ import {
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { FilesService } from './files.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
@@ -15,17 +16,18 @@ import { fileFilter, fileNamer } from './helpers';
 import { Response } from 'express';
 import { ConfigService } from '@nestjs/config';
 
+@ApiTags('Files')
 @Controller('files')
 export class FilesController {
   constructor(
     private readonly filesService: FilesService,
-    private readonly configService: ConfigService
+    private readonly configService: ConfigService,
   ) {}
 
   @Get('product/:imageName')
   findProductImage(
     @Res() res: Response,
-    @Param('imageName') imageName: string
+    @Param('imageName') imageName: string,
   ) {
     const path = this.filesService.getStaticProductImage(imageName);
     res.sendFile(path);
